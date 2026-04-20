@@ -150,10 +150,21 @@ body {
 
 .social-links {
     position: absolute;
-    bottom: 30px;
+    bottom: 45px;
     display: flex;
     gap: 30px;
     z-index: 10;
+}
+
+.credits {
+    position: absolute;
+    bottom: 15px;
+    font-size: 0.75rem;
+    color: rgba(160, 174, 192, 0.6);
+    letter-spacing: 1.5px;
+    z-index: 10;
+    pointer-events: none;
+    text-transform: uppercase;
 }
 
 .social-links a {
