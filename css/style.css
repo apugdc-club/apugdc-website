@@ -159,9 +159,8 @@ body {
 }
 
 .social-links a:hover {
-    color: #00fff9;
-    transform: translateY(-6px);
-    text-shadow: 0 0 15px rgba(0, 255, 249, 0.7);
+    color: #ffffff;
+    transform: translateY(-3px);
 }
 
 .glitch::before,
