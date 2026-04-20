@@ -159,6 +159,9 @@ body {
 .credits {
     position: absolute;
     bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
     font-size: 0.75rem;
     color: rgba(160, 174, 192, 0.6);
     letter-spacing: 1.5px;
