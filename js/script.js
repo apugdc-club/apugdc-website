@@ -1,5 +1,6 @@
 document.addEventListener("mousemove", (e) => {
     const title = document.querySelector(".parallax-group");
+    if (!title) return;
 
     const x = (window.innerWidth / 2 - e.pageX) / 60;
     const y = (window.innerHeight / 2 - e.pageY) / 60;
@@ -10,8 +11,11 @@ document.addEventListener("mousemove", (e) => {
 
 let isMoving = false;
 document.addEventListener("mousemove", () => {
+    const title = document.querySelector(".parallax-group");
+    if (!title) return;
+    
     if (!isMoving) {
-        document.querySelector(".parallax-group").style.transition = 'none';
+        title.style.transition = 'none';
         isMoving = true;
     }
 
@@ -45,3 +49,31 @@ const createStars = () => {
 };
 
 document.addEventListener('DOMContentLoaded', createStars);
+
+// Slider Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderWrapper = document.getElementById('ggw-slider');
+    if (!sliderWrapper) return;
+    
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    const slides = document.querySelectorAll('.slide');
+    
+    let currentSlide = 0;
+    
+    const updateSlider = () => {
+        sliderWrapper.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    };
+    
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            updateSlider();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            updateSlider();
+        });
+    }
+});

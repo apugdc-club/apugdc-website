@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APU Game Development Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body>
+    <nav class="pill-nav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="showcase.html">Games Showcase</a></li>
+            <li><a href="ggw.html">GGW</a></li>
+            <li><a href="hall-of-fame.html">Hall of Fame</a></li>
+        </ul>
+    </nav>
+
+    <div class="slider-container">
+        <div class="slider-wrapper" id="ggw-slider">
+            <div class="slide">
+                <div class="landing-container parallax-group">
+                    <h1 class="title-wrapper">
+                        <div class="glitch" data-text="Great Game Week">Great Game Week</div>
+                        <div class="glitch" data-text="2026">2026</div>
+                    </h1>
+                    <p class="slogan">July 7th - July 9th</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="video-container">
+                    <h2 class="video-title">Great Game Week 2025</h2>
+                    <iframe width="800" height="450" src="https://www.youtube.com/embed/pl5XR8mTN3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="video-container">
+                    <h2 class="video-title">Great Game Week 2024</h2>
+                    <iframe width="800" height="450" src="https://www.youtube.com/embed/I0CQQG4BlQE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <button class="nav-arrow left-arrow" id="prev-slide"><i class="bi bi-chevron-left"></i></button>
+        <button class="nav-arrow right-arrow" id="next-slide"><i class="bi bi-chevron-right"></i></button>
+    </div>
+
+    <p class="credits">developed by azar and aghaz</p>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
