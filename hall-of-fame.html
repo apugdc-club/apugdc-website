@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall of Fame - APU Game Development Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hof-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            width: 100%;
+            padding: 2rem;
+            margin-top: 10%"
+        }
+
+        .hof-title {
+            font-size: 3vw;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 0, 234, 0.5);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .committee-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+        }
+
+        .member-card {
+            background: rgba(20, 20, 25, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem 4rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            min-width: 250px;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(255, 0, 234, 0.2);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        .member-role {
+            color: #ff00ea;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .member-name {
+            color: #e2e8f0;
+            font-size: 2rem;
+            font-weight: 800;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hof-title {
+                font-size: 8vw;
+                margin-top: 2rem;
+            }
+            .hof-container {
+                margin-top: 80px;
+            }
+            .member-card {
+                padding: 2rem 3rem;
+                min-width: 80vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="pill-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="showcase.html">Games Showcase</a></li>
+            <li><a href="ggw.html">GGW</a></li>
+            <li><a href="hall-of-fame.html" class="active">Hall of Fame</a></li>
+        </ul>
+    </nav>
+
+    <div class="hof-container parallax-group">
+        <h1 class="hof-title">Committee 2026</h1>
+
+        <div class="committee-grid">
+            <div class="member-card">
+                <div class="member-role">President</div>
+                <div class="member-name">Azwa</div>
+            </div>
+            <div class="member-card">
+                <div class="member-role">Vice President</div>
+                <div class="member-name">Dominic</div>
+            </div>
+            <div class="member-card">
+                <div class="member-role">Event Head</div>
+                <div class="member-name">Saif</div>
+            </div>
+            <div class="member-card">
+                <div class="member-role">External Affairs Head</div>
+                <div class="member-name">Anas</div>
+            </div>
+            <div class="member-card">
+                <div class="member-role">Marketing Head</div>
+                <div class="member-name">Aghaz</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
