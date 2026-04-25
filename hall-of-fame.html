@@ -15,15 +15,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             z-index: 10;
             width: 100%;
-            padding: 2rem;
-            margin-top: 10%"
+            height: 100dvh;
+            padding: 120px 2rem 2rem 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            overflow-y: auto;
         }
 
         .hof-title {
-            font-size: 3vw;
+            font-size: 4vw;
             font-weight: 800;
             color: #ffffff;
             text-shadow: 0 0 20px rgba(255, 0, 234, 0.5);
@@ -33,59 +38,67 @@
             text-align: center;
         }
 
-        .committee-grid {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 1000px;
-        }
-
-        .member-card {
+        .hof-table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: separate;
+            border-spacing: 0;
             background: rgba(20, 20, 25, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 16px;
-            padding: 2.5rem 4rem;
-            text-align: center;
+            overflow: hidden;
             backdrop-filter: blur(10px);
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            min-width: 250px;
         }
 
-        .member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(255, 0, 234, 0.2);
-            border-color: rgba(0, 255, 255, 0.4);
+        .hof-table th, .hof-table td {
+            padding: 1.5rem 2.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .member-role {
+        .hof-table th {
             color: #ff00ea;
             font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            background: rgba(0, 0, 0, 0.3);
         }
 
-        .member-name {
+        .hof-table td {
             color: #e2e8f0;
-            font-size: 2rem;
-            font-weight: 800;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .hof-table tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        .hof-table tbody tr:hover {
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .hof-table tbody tr:last-child th,
+        .hof-table tbody tr:last-child td {
+            border-bottom: none;
         }
 
         @media (max-width: 768px) {
             .hof-title {
                 font-size: 8vw;
-                margin-top: 2rem;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
             }
             .hof-container {
-                margin-top: 80px;
+                padding-top: 100px;
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
-            .member-card {
-                padding: 2rem 3rem;
-                min-width: 80vw;
+            .hof-table th, .hof-table td {
+                padding: 1rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -102,45 +115,39 @@
         </ul>
     </nav>
 
-    <div style="position: absolute; top: 12%; left: 0; width: 100vw; z-index: 15;" class="parallax-group">
+    <div class="hof-container parallax-group">
         <h1 class="hof-title">Committee 2026</h1>
-    </div>
 
-    <div class="slider-container" style="z-index: 5;">
-        <div class="slider-wrapper">
-            <div class="slide">
-                <div class="member-card">
-                    <div class="member-role">President</div>
-                    <div class="member-name">Azwa</div>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="member-card">
-                    <div class="member-role">Vice President</div>
-                    <div class="member-name">Dominic</div>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="member-card">
-                    <div class="member-role">Event Head</div>
-                    <div class="member-name">Saif</div>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="member-card">
-                    <div class="member-role">External Affairs Head</div>
-                    <div class="member-name">Anas</div>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="member-card">
-                    <div class="member-role">Marketing Head</div>
-                    <div class="member-name">Aghaz</div>
-                </div>
-            </div>
-        </div>
-        <button class="nav-arrow left-arrow"><i class="bi bi-chevron-left"></i></button>
-        <button class="nav-arrow right-arrow"><i class="bi bi-chevron-right"></i></button>
+        <table class="hof-table">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>President</td>
+                    <td>Azwa</td>
+                </tr>
+                <tr>
+                    <td>Vice President</td>
+                    <td>Dominic</td>
+                </tr>
+                <tr>
+                    <td>Event Head</td>
+                    <td>Saif</td>
+                </tr>
+                <tr>
+                    <td>External Affairs Head</td>
+                    <td>Anas</td>
+                </tr>
+                <tr>
+                    <td>Marketing Head</td>
+                    <td>Aghaz</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <script src="js/script.js"></script>
