@@ -52,28 +52,34 @@ document.addEventListener('DOMContentLoaded', createStars);
 
 // Slider Functionality
 document.addEventListener('DOMContentLoaded', () => {
-    const sliderWrapper = document.getElementById('ggw-slider');
-    if (!sliderWrapper) return;
+    const sliderWrappers = document.querySelectorAll('.slider-wrapper');
     
-    const prevBtn = document.getElementById('prev-slide');
-    const nextBtn = document.getElementById('next-slide');
-    const slides = document.querySelectorAll('.slide');
-    
-    let currentSlide = 0;
-    
-    const updateSlider = () => {
-        sliderWrapper.style.transform = `translateX(-${currentSlide * 100}vw)`;
-    };
-    
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
-            updateSlider();
-        });
+    sliderWrappers.forEach(sliderWrapper => {
+        const container = sliderWrapper.closest('.slider-container');
+        if (!container) return;
         
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
-            updateSlider();
-        });
-    }
+        const prevBtn = container.querySelector('.left-arrow');
+        const nextBtn = container.querySelector('.right-arrow');
+        const slides = sliderWrapper.querySelectorAll('.slide');
+        
+        if (!slides.length) return;
+        
+        let currentSlide = 0;
+        
+        const updateSlider = () => {
+            sliderWrapper.style.transform = `translateX(-${currentSlide * 100}vw)`;
+        };
+        
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+                updateSlider();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+                updateSlider();
+            });
+        }
+    });
 });
